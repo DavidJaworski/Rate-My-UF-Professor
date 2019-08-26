@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            font-family: Helvetica, sans-serif;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        .profname {
+            font-size: 20px;
+            color: #0021A5;
+            font-family: "Lucida Grande", sans-serif;
+        }
+        body {
+            {#make border size of results table#}
+            border: 4px solid #0021A5;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <table align="center">
+        {% for row in output %}
+            <tr>
+                {% if row != 'The following professors have no reviews on Rate My Professor:' %}
+                    <td>
+                        <span class="profname">{{ row }} <br></span><br>
+                        {% for i in range(3) %}
+                            {% if i == 0 %}
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {% endif %}
+                            {% if i != 2 %}
+                                {{ output[row][i] }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {% else %}
+                                {{ output[row][i] }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    {% for row in output %}
+        {% if row == 'The following professors have no reviews on Rate My Professor:' %}
+            <p>
+                {{ row }}<br>
+                {{ output[row] }}
+            </p>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
