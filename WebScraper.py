@@ -1,16 +1,22 @@
 # Figure out errors: course code not found in catalog. Either not a valid course or not taught this semester
-# also deal with variations of user input
+# also deal with variations of user input (spaces between course prefix and number cause issue.
+# also issue with labs for classes like physics with json format
 
 import requests
 
 
+# have to have a loop through the list of professors for a particular class section. Look at mac2312 for an example
+# mongodb does not accept set data struct. Use a list and interate through to check for uniqueness
+# check out what the deal is with the enc classes. why did the same course get split into multiple? something to do
+# with some employee benefits bullshit.
+# what to do if a professor hasn't been assigned to a course yet?
 def scraper(userinput):
     UFurl = 'https://one.ufl.edu/apix/soc/schedule/?category=CWSP&term=2198&course-code='
     profs = {}
     courses = userinput.split(', ')
 
     for course in courses:
-        response = requests.get(UFurl + course, )
+        response = requests.get(UFurl + course)
         response = response.json()
         for sections in response[0]['COURSES']:
             for section in sections['sections']:
