@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from WebScraper import scraper, geneds
+from baloney.WebScraper import scraper, geneds
 
 app = Flask(__name__)
 
