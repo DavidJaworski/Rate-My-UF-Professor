@@ -1,1 +1,1 @@
-web: gunicorn baloney:app
+web: gunicorn --chdir baloney app:app
