@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bc20422-fd55-4af8-966b-6fdb39b8b731" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/webpagecss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebScraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/webpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/webpage.html" afterDir="false" />
-    </list>
+    <list default="true" id="1bc20422-fd55-4af8-966b-6fdb39b8b731" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/WebScraper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="829">
-              <caret line="66" column="112" lean-forward="true" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
+              <caret line="66" column="112" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
             </state>
           </provider>
         </entry>
@@ -28,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/templates/webpage.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
-              <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+              <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
               <folding>
                 <element signature="e#2546#2552#0#HTML" expanded="true" />
               </folding>
@@ -265,12 +260,12 @@
       <workItem from="1566494549319" duration="662000" />
       <workItem from="1566930200461" duration="45000" />
       <workItem from="1567016876667" duration="34000" />
-      <workItem from="1568493364280" duration="14113000" />
+      <workItem from="1568493364280" duration="14367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70361000" />
+    <option name="totallyTimeSpent" value="70615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="23" width="1390" height="797" extended-state="0" />
@@ -357,14 +352,14 @@
     <entry file="file://$PROJECT_DIR$/WebScraper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="829">
-          <caret line="66" column="112" lean-forward="true" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
+          <caret line="66" column="112" selection-start-line="66" selection-start-column="112" selection-end-line="66" selection-end-column="112" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/webpage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
-          <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+          <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
           <folding>
             <element signature="e#2546#2552#0#HTML" expanded="true" />
           </folding>
