@@ -14,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/baloney/WebScraper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="301">
-              <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
+              <caret line="104" column="14" lean-forward="true" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
               <folding>
                 <element signature="e#271#302#0" expanded="true" />
               </folding>
@@ -89,8 +89,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="316" />
-    <option name="y" value="352" />
+    <option name="x" value="104" />
+    <option name="y" value="140" />
     <option name="width" value="1390" />
     <option name="height" value="797" />
   </component>
@@ -251,12 +251,12 @@
       <workItem from="1568675330230" duration="1150000" />
       <workItem from="1568836554202" duration="495000" />
       <workItem from="1568862527598" duration="6016000" />
-      <workItem from="1569005818982" duration="4300000" />
+      <workItem from="1569005818982" duration="4518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83392000" />
+    <option name="totallyTimeSpent" value="83610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -268,7 +268,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="151" y="41" width="1390" height="797" extended-state="0" />
+    <frame x="104" y="140" width="1390" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2240356" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -361,7 +362,7 @@
     <entry file="file://$PROJECT_DIR$/baloney/WebScraper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
-          <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
+          <caret line="104" column="14" lean-forward="true" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
           <folding>
             <element signature="e#271#302#0" expanded="true" />
           </folding>
