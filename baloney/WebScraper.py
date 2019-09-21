@@ -101,5 +101,3 @@ def search(userinput):
             if bucket[title]:
                 sortedProfs.append({title: bucket[title]})
     return(sortedProfs)
-
-genEdScraper()
