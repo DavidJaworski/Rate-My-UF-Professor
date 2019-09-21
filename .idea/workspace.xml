@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bc20422-fd55-4af8-966b-6fdb39b8b731" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baloney/WebScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/baloney/WebScraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baloney/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/baloney/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baloney/static/gator.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baloney/static/webpagecss.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baloney/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/baloney/templates/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baloney/templates/result2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baloney/templates/webpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/baloney/templates/webpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baloney/versions.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="1bc20422-fd55-4af8-966b-6fdb39b8b731" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,12 +251,12 @@
       <workItem from="1568675330230" duration="1150000" />
       <workItem from="1568836554202" duration="495000" />
       <workItem from="1568862527598" duration="6016000" />
-      <workItem from="1569005818982" duration="2879000" />
+      <workItem from="1569005818982" duration="3619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81971000" />
+    <option name="totallyTimeSpent" value="82711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -310,7 +300,7 @@
     <SUITE FILE_PATH="coverage/RMP$main.coverage" NAME="main Coverage Results" MODIFIED="1563741811356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RMP$Flask__app_py_.coverage" NAME="Flask (baloney/app.py) Coverage Results" MODIFIED="1568611938340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RMP$RMP.coverage" NAME="RMP Coverage Results" MODIFIED="1563735979201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RMP$Flask__baloney_app_py_.coverage" NAME="Flask (baloney/app.py) Coverage Results" MODIFIED="1569034537427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RMP$Flask__baloney_app_py_.coverage" NAME="Flask (baloney/app.py) Coverage Results" MODIFIED="1569035606586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/text.txt" />
