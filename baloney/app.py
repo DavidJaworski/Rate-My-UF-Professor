@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from baloney.WebScraper import scraper, geneds
+from baloney.WebScraper import search
 
 app = Flask(__name__)
 
@@ -11,12 +11,7 @@ def webpage():
 
 @app.route('/result', methods=['POST'])
 def result():
-    return render_template('result.html', output=scraper(request.form['userinput']))
-
-
-@app.route('/result2', methods=['POST'])
-def result2():
-    return render_template('result2.html', output=geneds(request.form['userinput']))
+    return render_template('result.html', buckets=search(request.form['userinput']))
 
 
 if __name__ == '__main__':

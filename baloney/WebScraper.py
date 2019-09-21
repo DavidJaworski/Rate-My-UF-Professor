@@ -2,6 +2,7 @@
 # also deal with variations of user input (spaces between course prefix and number cause issue.
 # also issue with labs for classes like physics with json format
 
+from pymongo import MongoClient
 import requests
 
 
@@ -10,84 +11,95 @@ import requests
 # check out what the deal is with the enc classes. why did the same course get split into multiple? something to do
 # with some employee benefits bullshit.
 # what to do if a professor hasn't been assigned to a course yet?
-def scraper(userinput):
-    UFurl = 'https://one.ufl.edu/apix/soc/schedule/?category=CWSP&term=2198&course-code='
-    profs = {}
-    courses = userinput.split(', ')
 
-    for course in courses:
-        response = requests.get(UFurl + course)
-        response = response.json()
-        for sections in response[0]['COURSES']:
-            for section in sections['sections']:
-                if len(section['instructors']) != 0:
-                    if section['instructors'][0]['name'] not in profs:
-                        profs[section['instructors'][0]['name']] = set()
-                    if course not in profs[section['instructors'][0]['name']]:
-                        profs[section['instructors'][0]['name']].add(course)
+client = MongoClient("mongodb+srv://davidjaworski:Jaworski1@cluster0-rhhfx.mongodb.net/test?retryWrites=true&w=majority")
+db = client.rmp
 
-    return sortProfs(profs)
+dept = {'Accounting': 1703, }
 
-
-def geneds(coursecat):
-    UFurl = 'https://one.ufl.edu/apix/soc/schedule/?category=CWSP&term=2198&ge-' + coursecat + '=true'
+# repeat professors is only an issue for when searching multiple classes and also for entire gen ed groups
+def scraper():
+    UFurl = 'https://one.ufl.edu/apix/soc/schedule/?category=CWSP&term=2198&course-code=mac2312'
     response = requests.get(UFurl)
     response = response.json()
-    profs = {}
+    for course in response[0]['COURSES']:
+        collection = db[course['code']]
+        collection.delete_many({})
+        profs = {}
+        for section in course['sections']:
+            for instructor in section['instructors']:
+                #make course name an element in a list is going to require you to update data structure everywhere
+                profs[instructor['name']] = [[course['name']], 0, 0]
+        collection.insert_one(sortProfs(profs))
 
-    for sections in response[0]['COURSES']:
-        course = sections['code'] + ' - ' + sections['name']
-        for section in sections['sections']:
-            if len(section['instructors']) != 0:
-                if section['instructors'][0]['name'] not in profs:
-                    profs[section['instructors'][0]['name']] = set()
-                if course not in profs[section['instructors'][0]['name']]:
-                    profs[section['instructors'][0]['name']].add(course)
-
-    return sortProfs(profs)
-
+def genEdScraper():
+    genEds = ['b', 'c', 'd', 'h', 'n', 'm', 'p', 's']
+    for genEd in genEds:
+        UFurl = 'https://one.ufl.edu/apix/soc/schedule/?category=CWSP&term=2198&ge-' + genEd + '=true'
+        response = requests.get(UFurl)
+        response = response.json()
+        collection = db[genEd]
+        collection.delete_many({})
+        profs = {}
+        for course in response[0]['COURSES']:
+            for section in course['sections']:
+                for instructor in section['instructors']:
+                    # make course name an element in a list is going to require you to update data structure everywhere
+                    if instructor['name'] not in profs:
+                        profs[instructor['name']] = [{course['name']}, 0, 0]
+                    else:
+                        profs[instructor['name']][0].add(course['name'])
+        for prof in profs:
+            profs[prof][0] = list(profs[prof][0])
+        collection.insert_one(sortProfs(profs))
 
 def sortProfs(profs):
     RMPurl1 = 'https://solr-aws-elb-production.ratemyprofessors.com//solr/rmp/select/?solrformat=true&rows=20&wt=json&callback=noCB&q='
     RMPurl2 = '+AND+schoolid_s:1100&defType=edismax&qf=teacherfirstname_t^2000+teacherlastname_t^2000+teacherfullname_t^2000+autosuggest&bf=pow(total_number_of_ratings_i,2.1)&sort=total_number_of_ratings_i+desc&siteName=rmp&rows=20&start=0&fl=pk_id+teacherfirstname_t+teacherlastname_t+total_number_of_ratings_i+averageratingscore_rf+schoolid_s&fq='
-    ordProfs = []
-    output = {}
-
+    ordered_profs = {}
     for prof in profs:
         response = requests.get(RMPurl1 + prof.replace(' ', '+') + RMPurl2)
         response = response.json()
         if len(response['response']['docs']) != 0 and response['response']['docs'][0]['total_number_of_ratings_i'] != 0:
-            if len(ordProfs) == 0:
-                ordProfs.append((response['response']['docs'][0]['averageratingscore_rf'],
-                                 response['response']['docs'][0]['total_number_of_ratings_i'], prof))
-            else:
-                for x in range(0, len(ordProfs)):
-                    if response['response']['docs'][0]['averageratingscore_rf'] > ordProfs[x][0]:
-                        ordProfs.insert(x, (response['response']['docs'][0]['averageratingscore_rf'],
-                                            response['response']['docs'][0]['total_number_of_ratings_i'], prof))
-                        break
-                else:
-                    ordProfs.append((response['response']['docs'][0]['averageratingscore_rf'],
-                                     response['response']['docs'][0]['total_number_of_ratings_i'], prof))
-        else:
-            ordProfs.append((0, 0, prof))
+            profs[prof][1] = response['response']['docs'][0]['averageratingscore_rf']
+            profs[prof][2] = response['response']['docs'][0]['total_number_of_ratings_i']
+    while (profs):
+        high = -1
+        name = ''
+        for key in profs:
+            if profs[key][1] > high:
+                high = profs[key][1]
+                name = key
+        ordered_profs[name] = [profs[name][0], profs[name][1], profs[name][2]]
+        del profs[name]
+    return ordered_profs
 
-    for x in range(0, len(ordProfs)):
-        if ordProfs[x][0] != 0:
-            output[ordProfs[x][2]] = ['Average Rating: ' + str(ordProfs[x][0]), 'Number of Rates: ' +
-                                      str(ordProfs[x][1]), 'Course(s): ' + ', '.join(profs[ordProfs[x][2]])]
-        else:
-            norateprof1 = 'The following professors have no reviews on Rate My Professor:'
-            norateprof = ''
-            for y in range(x, len(ordProfs)):
-                if len(ordProfs) - x == 2:
-                    norateprof = norateprof + ', '.join(ordProfs[y][2]) + ' and ' + ', '.join(ordProfs[y + 1][2])
-                    break
+# attempt to remove the course procedding the section in the array in the if
+def search(userinput):
+    collec = db[userinput]
+    guarantee = {}
+    promising = {}
+    mediocre = {}
+    avoid = {}
+    new = {}
+    sortedProfs =[]
+    for course in collec.find():
+        for section in course:
+            if section != '_id':
+                if course[section][1] >= 3.5 and course[section][2] >= 10:
+                    guarantee[section] = course[section]
+                elif course[section][1] >= 3.5:
+                    promising[section] = course[section]
+                elif course[section][1] >= 3.0:
+                    mediocre[section] = course[section]
+                elif course[section][1] == 0:
+                    new[section] = course[section]
                 else:
-                    if len(ordProfs) - x > 1 and len(ordProfs) - y == 1:
-                        norateprof = norateprof + ', and ' + ordProfs[y][2]
-                    else:
-                        norateprof = norateprof + (ordProfs[y][2] if y == x else ', ' + ordProfs[y][2])
-            output[norateprof1] = norateprof
-            break
-    return output
+                    avoid[section] = course[section]
+    for bucket in [{'Guarantee': guarantee}, {'Promising': promising}, {'Mediocre': mediocre}, {'Avoid': avoid}, {'New': new}]:
+        for title in bucket:
+            if bucket[title]:
+                sortedProfs.append({title: bucket[title]})
+    return(sortedProfs)
+
+genEdScraper()
