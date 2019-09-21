@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1bc20422-fd55-4af8-966b-6fdb39b8b731" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/baloney/WebScraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/baloney/WebScraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baloney/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/baloney/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baloney/templates/webpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/baloney/templates/webpage.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/baloney/WebScraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="101" column="58" lean-forward="true" selection-start-line="101" selection-start-column="58" selection-end-line="101" selection-end-column="58" />
+            <state relative-caret-position="152">
+              <caret line="90" column="46" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
               <folding>
                 <element signature="e#271#302#0" expanded="true" />
               </folding>
@@ -28,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/baloney/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -39,17 +41,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/baloney/templates/webpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="148" column="7" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
+            <state relative-caret-position="270">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/baloney/templates/result.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="84" selection-start-line="84" selection-end-line="84" />
+            <state relative-caret-position="314">
+              <caret line="93" column="98" selection-start-line="93" selection-start-column="98" selection-end-line="93" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -83,17 +85,17 @@
         <option value="$PROJECT_DIR$/webpagecss.css" />
         <option value="$PROJECT_DIR$/templates/webpage.html" />
         <option value="$PROJECT_DIR$/static/webpagecss.css" />
-        <option value="$PROJECT_DIR$/baloney/templates/webpage.html" />
-        <option value="$PROJECT_DIR$/baloney/templates/result.html" />
         <option value="$PROJECT_DIR$/baloney/app.py" />
+        <option value="$PROJECT_DIR$/baloney/templates/webpage.html" />
         <option value="$PROJECT_DIR$/baloney/WebScraper.py" />
+        <option value="$PROJECT_DIR$/baloney/templates/result.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="104" />
-    <option name="y" value="140" />
-    <option name="width" value="1390" />
+    <option name="x" value="-180" />
+    <option name="y" value="23" />
+    <option name="width" value="1096" />
     <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -102,29 +104,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="RMP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RMP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RMP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RMP" type="462c0819:PsiDirectoryNode" />
-              <item name="baloney" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RMP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RMP" type="462c0819:PsiDirectoryNode" />
-              <item name="baloney" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,8 +204,8 @@
     <list>
       <item itemvalue="Flask server.RMP" />
       <item itemvalue="Flask server.Flask (baloney/app.py)" />
-      <item itemvalue="Python.main" />
       <item itemvalue="JavaScript Debug.webpage.html" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -254,11 +235,12 @@
       <workItem from="1568836554202" duration="495000" />
       <workItem from="1568862527598" duration="6016000" />
       <workItem from="1569005818982" duration="4952000" />
+      <workItem from="1569093832183" duration="12264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84044000" />
+    <option name="totallyTimeSpent" value="96308000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -270,15 +252,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="104" y="140" width="1390" height="797" extended-state="0" />
+    <frame x="-180" y="23" width="1096" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2240356" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28375912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4212766" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18181819" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -302,6 +284,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RMP$main.coverage" NAME="main Coverage Results" MODIFIED="1563741811356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RMP$Flask__app_py_.coverage" NAME="Flask (baloney/app.py) Coverage Results" MODIFIED="1568611938340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Rate_My_UF_Professor$Flask__baloney_app_py_.coverage" NAME="Flask (baloney/app.py) Coverage Results" MODIFIED="1569108923549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RMP$RMP.coverage" NAME="RMP Coverage Results" MODIFIED="1563735979201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RMP$Flask__baloney_app_py_.coverage" NAME="Flask (baloney/app.py) Coverage Results" MODIFIED="1569035606586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -317,9 +300,7 @@
     <entry file="file://$PROJECT_DIR$/templates/webpage.html" />
     <entry file="file://$PROJECT_DIR$/app.py" />
     <entry file="file://$PROJECT_DIR$/static/webpagecss.css" />
-    <entry file="file://$PROJECT_DIR$/baloney/versions.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/baloney/versions.txt" />
     <entry file="file://$USER_HOME$/Downloads/David Jaworski Summer Research/diffprivacy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -330,44 +311,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baloney/templates/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baloney/static/webpagecss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baloney/templates/webpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="148" column="7" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/baloney/static/webpagecss.css" />
     <entry file="file://$PROJECT_DIR$/baloney/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/baloney/templates/webpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/baloney/WebScraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="101" column="58" lean-forward="true" selection-start-line="101" selection-start-column="58" selection-end-line="101" selection-end-column="58" />
+        <state relative-caret-position="152">
+          <caret line="90" column="46" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
           <folding>
             <element signature="e#271#302#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baloney/templates/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="93" column="98" selection-start-line="93" selection-start-column="98" selection-end-line="93" selection-end-column="98" />
         </state>
       </provider>
     </entry>

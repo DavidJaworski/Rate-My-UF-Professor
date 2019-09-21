@@ -86,9 +86,9 @@ def search(userinput):
     for course in collec.find():
         for section in course:
             if section != '_id':
-                if course[section][1] >= 3.5 and course[section][2] >= 10:
+                if course[section][1] >= 4.0 and course[section][2] >= 10:
                     guarantee[section] = course[section]
-                elif course[section][1] >= 3.5:
+                elif course[section][1] >= 4.0:
                     promising[section] = course[section]
                 elif course[section][1] >= 3.0:
                     mediocre[section] = course[section]
@@ -96,7 +96,7 @@ def search(userinput):
                     new[section] = course[section]
                 else:
                     avoid[section] = course[section]
-    for bucket in [{'Guarantee': guarantee}, {'Promising': promising}, {'Mediocre': mediocre}, {'Avoid': avoid}, {'New': new}]:
+    for bucket in [{'Guaranteed Winners': guarantee}, {'Promising Newcomer': promising}, {'Middle of the Barrel': mediocre}, {'Please Avoid': avoid}, {'New Guys': new}]:
         for title in bucket:
             if bucket[title]:
                 sortedProfs.append({title: bucket[title]})
