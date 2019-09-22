@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
           .course {
               font-size: 12px;
@@ -16,22 +16,49 @@
 
           }
           .bucket {
-              font-size: 35px;
+              font-size: 30px;
               background-color: #606060;
               color: white;
+              text-decoration: none !important;
+
           }
           .card-header{
               background-color: #606060;
           }
-          {#.table-striped > tbody > tr:nth-child(even) > th {#}
-               {#background-color: red;#}
-          {#  }#}
           .table_head{
               font-size: 20px;
           }
+          .btn.btn-link:active,
+          .btn.btn-link:hover,
+            .btn.btn-link:focus {
+              color: white !important;
+            }
+          .fa {
+              color: orange;
+          }
+          {#[data-toggle="collapse"] .fa:before{#}
+          {#      content: "\f146";#}
+          {#  }#}
+          {#  [data-toggle="collapse"].collapsed .fa:before{#}
+          {#      content: "\f0fe";#}
+          {#  }#}
+          {#[data-toggle="collapse"] .fa:before {#}
+          {#    content: "\f146";#}
+          {#  }#}
+          {##}
+          {#  [data-toggle="collapse"].collapsed .fa:before {#}
+          {#    content: "\f0fe";#}
+          {#  #}
+          {#.accordion .card-header:after { }#}
+          {#font-family: 'FontAwesome';{#content: "\f146";#}{#float: right;#}{#color: orange;#}{#font-size: 25px;#}{#padding-top: 8px;#}
+
+            {#.accordion .card-header.collapsed:after { }#}
+            /* symbol for "collapsed" panels */
+            {#content:"\f0fe";#}
+
       </style>
 
-    <title>Hello, world!</title>
+    <title>Results </title>
   </head>
   <body>
     <br>
@@ -41,20 +68,26 @@
         {% for i in range(buckets|length) %}
             {% for title in buckets[i] %}
                 <div class="card">
-                    <div class="card-header pl-0" id="head{{ title | replace(" ", "_") }}">
+                    <div class="card-header pl-0" id="head{{ title | replace(" ", "_") }}" data-toggle="collapse" data-target="#{{ title | replace(" ", "_") }}" >
                         <h5 class="mb-0">
-                            <button class="btn btn-link bucket" type="button" data-toggle="collapse" data-target="#{{ title | replace(" ", "_") }}" aria-expanded="true" aria-controls="{{ title }}">
-                              {{ title }}
-                            </button>
+{#                            <div class="bucket">{{ title }}</div>#}
+                            <div class="container pr-0">
+                                <div class="row">
+                                    <div class="col-10 p-0">
+                                    <button type="button" class="btn btn-link bucket" >
+                                        {{ title }}
+                                    </button>
+                                    </div>
+                                    <div class="col-1 pl-4 pr-0 pt-1">
+                                        <i class="fa fa-chevron-down text-align-right" id="btn{{ title | replace(" ", "_") }}"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </h5>
                     </div>
-                    {% if i == 0 %}
-                        <div id="{{ title | replace(" ", "_") }}" class="collapse show" aria-labelledby="head{{ title | replace(" ", "_") }}" data-parent="#accordionresult">
-                    {% else %}
-                        <div id="{{ title | replace(" ", "_") }}" class="collapse" aria-labelledby="head{{ title | replace(" ", "_") }}" data-parent="#accordionresult">
-                    {% endif %}
-                      <div class="card-body p-0">
-                          <table class="table table-striped ":>
+                    <div id="{{ title | replace(" ", "_") }}" class="collapse {{ 'show' if i==0 else ''}}" aria-labelledby="head{{ title | replace(" ", "_") }}" data-parent="#accordionresult">
+                        <div class="card-body p-0">
+                          <table class="table table-striped ">
                             <tbody>
                                 <tr>
                                     <th class="pr-2">
@@ -87,29 +120,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-{#                                            {% for j in range(buckets[i][title][name][0] | length) %}#}
-                                                <div class="container">
-                                                    <div class="row">
-                                                        {% for j in range(buckets[i][title][name][0] | length) %}
-                                                            <div class="course text-left ml-4 pl-2">{{ buckets[i][title][name][0][j] }}<br></div>
-                                                        {% endfor %}
-                                                    </div>
+                                            <div class="container">
+                                                <div class="row">
+                                                    {% for j in range(buckets[i][title][name][0] | length) %}
+                                                        <div class="course text-left ml-4 pl-2">{{ buckets[i][title][name][0][j] }}<br></div>
+                                                    {% endfor %}
                                                 </div>
-{#                                                <div class="course">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ buckets[i][title][name][0][j] }}<br></div>#}
-{#                                            {% endfor %}#}
-{#                                            <button class="btn btn-link btn-sm pl-4" type="button" data-toggle="collapse" data-target="#{{ name | replace(" ", "_") }}" aria-expanded="false" aria-controls="collapseExample">#}
-{#                                                Courses#}
-{#                                            </button>#}
-{#                                            {{ name }}#}
-{#                                            <button class="btn btn-link btn-sm" type="button" data-toggle="collapse" data-target="#{{ name | replace(" ", "_") }}" aria-expanded="false" aria-controls="collapseExample">More Info</button>#}
-{##}
-{#                                            <div class="collapse" id="{{ name | replace(" ", "_") }}">#}
-{#                                                <div class="card card-body cardIn p-1" >#}
-{#                                                    {% for j in range(buckets[i][title][name][0] | length) %}#}
-{#                                                        {{ buckets[i][title][name][0][j] }}#}
-{#                                                    {% endfor %}#}
-{#                                                </div>#}
-{#                                            </div>#}
+                                            </div>
                                         </th>
                                     </tr>
                                 {% endfor %}
@@ -127,5 +144,32 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>#}
+{#    <script>#}
+        {#function myfunc(id){#}
+        {#    if (document.getElementById(id).className ==="fa fa-plus-square") {#}
+        {#        document.getElementById(id).className ="fa fa-minus-square";#}
+        {#    }#}
+        {#    else{#}
+        {#        document.getElementById(id).className ="fa fa-plus-square";#}
+        {#    }#}
+
+{#    $(document).ready(function () {#}
+{#        $('.collapse')#}
+{#            .on('hidden.bs.collapse', function () {#}
+{#                $(this)#}
+{#                    .parent()#}
+{#                    .find("fa-plus-square")#}
+{#                    .removeClass("fa-plus-square")#}
+{#                    .addClass("fa-minus-square")#}
+{#            })#}
+{#            .on('shown.bs.collapse', function () {#}
+{#                $(this)#}
+{#                    .parent()#}
+{#                    .find("fa-minus-square")#}
+{#                    .removeClass("fa-minus-square")#}
+{#                    .addClass("fa-plus-square")#}
+{#            });#}
+{#    });#}
+{#    </script>#}
   </body>
+</html>

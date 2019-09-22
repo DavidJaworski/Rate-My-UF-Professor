@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<a lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -47,32 +47,33 @@
 
     <div class="container"></div>
         <div class="row justify-content-center ">
-            <button id="c" type="button" class="btn btn-outline-primary btn-sm mb-3 mr-1">Composition</button>
-            <button id="d" type="button" class="btn btn-outline-primary btn-sm mb-3 mr-1">Diversity</button>
-            <button id="n" type="button" class="btn btn-outline-primary btn-sm mb-3">International</button>
+{#            wrap button in a#}
+            <a href="#result" id="c" roll="button" class="btn btn-outline-primary btn-sm mb-3 mr-1">Composition</a>
+            <a href="#result" id="d" roll="button" class="btn btn-outline-primary btn-sm mb-3 mr-1">Diversity</a>
+            <a href="#result" id="n" roll="button" class="btn btn-outline-primary btn-sm mb-3">International</a>
         </div>
         <div class="row justify-content-center">
-            <button id="h" type="button" class="btn btn-outline-primary btn-sm mb-3 mr-2">Humanities</button>
-            <button id="b" type="button" class="btn btn-outline-primary btn-sm mb-3 mr-2">Biological Sciences</button>
-            <button id="m" type="button" class="btn btn-outline-primary btn-sm mb-3">Mathematics</button>
+            <a href="#result" id="h" roll="button" class="btn btn-outline-primary btn-sm mb-3 mr-2">Humanities</a>
+            <a href="#result" id="b" roll="button" class="btn btn-outline-primary btn-sm mb-3 mr-2">Biological Sciences</a>
+            <a href="#result" id="m" roll="button" class="btn btn-outline-primary btn-sm mb-3">Mathematics</a>
         </div>
           <div class="row justify-content-center">
-            <button id="s" type="button" class="btn btn-outline-primary btn-sm mr-1">Social and Behavioral</button>
-            <button id="p" type="button" class="btn btn-outline-primary btn-sm">Physical Sciences</button>
+            <a href="#result" id="s" roll="button" class="btn btn-outline-primary btn-sm mr-1">Social and Behavioral</a>
+            <a href="#result" id="p" roll="button" class="btn btn-outline-primary btn-sm">Physical Sciences</a>
           </div>
       </div>
         <br>
 
      <div class="form-group mb-2 ml-3 mr-3">
         <textarea class="form-control" id="userinput" rows="3" placeholder="MAC2312"></textarea>
-         <div class="text-center mt-2">
-             <button id="gensearch" type="button" class="btn btn-primary btn-sm mr-3">Search</button>
-            <button type="button" class="btn btn-primary btn-sm">Clear</button>
-        </div>
      </div>
+    <div class="text-center mt-2">
+         <a href="#result" id="gensearch" roll="button" class="btn btn-primary btn-sm mr-3">Search</a>
+        <button id="clear" type="button" class="btn btn-primary btn-sm">Clear</button>
+    </div>
 
 
-    <div id="result"></div>
+  <div id="result"></div>
 
 
     <!-- Optional JavaScript -->
@@ -81,18 +82,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script>
-          $(function() {
-            $("#gensearch").click(function () {
-                $("#result").load("/result", {
-                    userinput : $("#userinput").val()
-                });
+
+        $(function() {
+            $("#clear").click(function () {
+                    $("#userinput").val('');
             });
         });
         $(function() {
-            $("#b").on('click', function () {
+            $("#gensearch").click(function (event) {
+                $("#result").load("/result", {
+                    userinput : $("#userinput").val()
+                });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+        $(function() {
+            $("#b").on('click', function (event) {
                 $("#result").load("/result", {
                     userinput : "b"
                 });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
             });
         });
         $(function() {
@@ -100,6 +125,15 @@
                 $("#result").load("/result", {
                     userinput : "c"
                 });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
             });
         });
         $(function() {
@@ -107,6 +141,15 @@
                 $("#result").load("/result", {
                     userinput : "d"
                 });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
             });
         });
         $(function() {
@@ -114,6 +157,15 @@
                 $("#result").load("/result", {
                     userinput : "h"
                 });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
             });
         });
         $(function() {
@@ -121,6 +173,15 @@
                 $("#result").load("/result", {
                     userinput : "n"
                 });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
             });
         });
         $(function() {
@@ -128,6 +189,15 @@
                 $("#result").load("/result", {
                     userinput : "m"
                 });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
             });
         });
         $(function() {
@@ -135,6 +205,15 @@
                 $("#result").load("/result", {
                     userinput : "p"
                 });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
             });
         });
         $(function() {
@@ -142,6 +221,15 @@
                 $("#result").load("/result", {
                     userinput : "s"
                 });
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
             });
         });
     </script>
