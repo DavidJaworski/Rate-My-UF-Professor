@@ -18,8 +18,9 @@ db = client.rmp
 dept = {'Accounting': 1703, }
 
 # repeat professors is only an issue for when searching multiple classes and also for entire gen ed groups
-def scraper():
-    UFurl = 'https://one.ufl.edu/apix/soc/schedule/?category=CWSP&term=2198&course-code=mac2312'
+def scraper(code):
+    UFurl = 'https://one.ufl.edu/apix/soc/schedule/?category=CWSP&term=2198&dept=' + code + '0000'
+    # UFurl = 'https://one.ufl.edu/apix/soc/schedule/?category=CWSP&term=2198&course=ENC1101'
     response = requests.get(UFurl)
     response = response.json()
     for course in response[0]['COURSES']:
