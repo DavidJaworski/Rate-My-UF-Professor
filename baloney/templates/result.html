@@ -48,28 +48,16 @@
           .info:focus {
               outline: none;
             }
+          .btn:focus,.btn:active {
+              outline: none!important;
+              box-shadow: none;
+          }
           .popover {
               max-width: 80%;
           }
-          {#[data-toggle="collapse"] .fa:before{#}
-          {#      content: "\f146";#}
-          {#  }#}
-          {#  [data-toggle="collapse"].collapsed .fa:before{#}
-          {#      content: "\f0fe";#}
-          {#  }#}
-          {#[data-toggle="collapse"] .fa:before {#}
-          {#    content: "\f146";#}
-          {#  }#}
-          {##}
-          {#  [data-toggle="collapse"].collapsed .fa:before {#}
-          {#    content: "\f0fe";#}
-          {#  #}
-          {#.accordion .card-header:after { }#}
-          {#font-family: 'FontAwesome';{#content: "\f146";#}{#float: right;#}{#color: orange;#}{#font-size: 25px;#}{#padding-top: 8px;#}
-
-            {#.accordion .card-header.collapsed:after { }#}
-            /* symbol for "collapsed" panels */
-            {#content:"\f0fe";#}
+           @media only screen and (min-width: 768px) {
+                .xxx {width: 600px}
+          }
 
       </style>
 
