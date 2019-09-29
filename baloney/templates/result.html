@@ -65,8 +65,6 @@
   </head>
   <body>
     <br>
-{#    make the first card shown and the rest of the cards collapsed#}
-{#    update for the fact that the course names are now in a list#}
     <div class="accordion" id="accordionresult">
         {% for i in range(buckets|length) %}
             {% for title in buckets[i] %}
@@ -108,13 +106,13 @@
                                 </tr>
                                 {% for name in buckets[i][title] %}
                                     <tr >
-                                        <th class="pt-1 pb-0">
-                                            <div class="container pb-2">
+                                        <th class="pt-1 pb-1">
+                                            <div class="container pb-2 pr-0">
                                                 <div class="row">
-                                                    <div class="col pr-0">
+                                                    <div class="col-4 pr-0">
                                                         {{ name }}
                                                     </div>
-                                                    <div class="col pl-0 text-center">
+                                                    <div class="col-8 pl-3 pr-0 text-center">
                                                         {% if buckets[i][title][name][1] != 0 %}
                                                             {{ buckets[i][title][name][1] }}
                                                         {% else %}
@@ -124,11 +122,9 @@
                                                 </div>
                                             </div>
                                             <div class="container">
-                                                <div class="row">
-                                                    {% for j in range(buckets[i][title][name][0] | length) %}
-                                                        <div class="course text-left ml-4 pl-2">{{ buckets[i][title][name][0][j] }}<br></div>
-                                                    {% endfor %}
-                                                </div>
+                                                {% for j in range(buckets[i][title][name][0] | length) %}
+                                                    <div class="row course text-left ml-4 pl-2">{{ buckets[i][title][name][0][j] }}</div>
+                                                {% endfor %}
                                             </div>
                                         </th>
                                     </tr>
@@ -147,32 +143,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  {#    <script>#}
-        {#function myfunc(id){#}
-        {#    if (document.getElementById(id).className ==="fa fa-plus-square") {#}
-        {#        document.getElementById(id).className ="fa fa-minus-square";#}
-        {#    }#}
-        {#    else{#}
-        {#        document.getElementById(id).className ="fa fa-plus-square";#}
-        {#    }#}
-
-{#    $(document).ready(function () {#}
-{#        $('.collapse')#}
-{#            .on('hidden.bs.collapse', function () {#}
-{#                $(this)#}
-{#                    .parent()#}
-{#                    .find("fa-plus-square")#}
-{#                    .removeClass("fa-plus-square")#}
-{#                    .addClass("fa-minus-square")#}
-{#            })#}
-{#            .on('shown.bs.collapse', function () {#}
-{#                $(this)#}
-{#                    .parent()#}
-{#                    .find("fa-minus-square")#}
-{#                    .removeClass("fa-minus-square")#}
-{#                    .addClass("fa-plus-square")#}
-{#            });#}
-{#    });#}
-{#    </script>#}
   </body>
 </html>
