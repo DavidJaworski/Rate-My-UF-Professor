@@ -76,14 +76,72 @@ def sortProfs(profs):
     return ordered_profs
 
 # attempt to remove the course procedding the section in the array in the if
+# def search(userinput):
+#     collec = db[userinput]
+#     guarantee = {}
+#     promising = {}
+#     mediocre = {}
+#     avoid = {}
+#     new = {}
+#     sortedProfs =[]
+#     for course in collec.find():
+#         for section in course:
+#             if section != '_id':
+#                 if course[section][1] >= 4.0 and course[section][2] >= 10:
+#                     guarantee[section] = course[section]
+#                 elif course[section][1] >= 4.0:
+#                     promising[section] = course[section]
+#                 elif course[section][1] >= 3.0:
+#                     mediocre[section] = course[section]
+#                 elif course[section][1] == 0:
+#                     new[section] = course[section]
+#                 else:
+#                     avoid[section] = course[section]
+#     for bucket in [{'Guaranteed Winners': guarantee}, {'Promising Newcomer': promising}, {'Middle of the Barrel': mediocre}, {'Please Avoid': avoid}, {'New Guys': new}]:
+#         for title in bucket:
+#             if bucket[title]:
+#                 sortedProfs.append({title: bucket[title]})
+#     return(sortedProfs)
+
+# attempt to remove the course procedding the section in the array in the if
 def search(userinput):
-    collec = db[userinput]
+    if (len(userinput) == 1):
+        return genSearch(userinput)
+    else:
+        userinput = userinput.replace(" ", "").upper()
+    collec = db[userinput[0] + userinput[1]]
     guarantee = {}
     promising = {}
     mediocre = {}
     avoid = {}
     new = {}
     sortedProfs =[]
+    course = collec.find({'code': userinput}).next()['data']
+    for prof in course:
+        if course[prof][1] >= 3.5 and course[prof][2] >= 10:
+            guarantee[prof] = course[prof]
+        elif course[prof][1] >= 3.5:
+            promising[prof] = course[prof]
+        elif course[prof][1] >= 3.0:
+            mediocre[prof] = course[prof]
+        elif course[prof][1] == 0:
+            new[prof] = course[prof]
+        else:
+            avoid[prof] = course[prof]
+    for bucket in [{'Guaranteed Winners': guarantee}, {'Promising Newcomer': promising}, {'Middle of the Barrel': mediocre}, {'Please Avoid': avoid}, {'New Guys: Brand new profs and TAs': new}]:
+        for title in bucket:
+            if bucket[title]:
+                sortedProfs.append({title: bucket[title]})
+    return(sortedProfs)
+
+def genSearch(userinput):
+    collec = db[userinput]
+    guarantee = {}
+    promising = {}
+    mediocre = {}
+    avoid = {}
+    new = {}
+    sortedProfs = []
     for course in collec.find():
         for section in course:
             if section != '_id':
@@ -97,8 +155,9 @@ def search(userinput):
                     new[section] = course[section]
                 else:
                     avoid[section] = course[section]
-    for bucket in [{'Guaranteed Winners': guarantee}, {'Promising Newcomer': promising}, {'Middle of the Barrel': mediocre}, {'Please Avoid': avoid}, {'New Guys': new}]:
+    for bucket in [{'Guaranteed Winners': guarantee}, {'Promising Newcomer': promising},
+                   {'Middle of the Barrel': mediocre}, {'Please Avoid': avoid}, {'New Guys': new}]:
         for title in bucket:
             if bucket[title]:
                 sortedProfs.append({title: bucket[title]})
-    return(sortedProfs)
+    return (sortedProfs)

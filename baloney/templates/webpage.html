@@ -126,8 +126,8 @@
             $('[data-toggle="popover"]').popover({
                 title: '&nbsp;<a href="#" class="close" data-dismiss="alert">&times;</a>'
             });
-            $(document).on("click", ".popover .close" , function(){
-                $(this).parents(".popover").popover('hide');
+            $(document).on("click", ".popover .close", function () {
+                $(this).closest(".popover").popover('hide');
             });
         });
         $(function() {
