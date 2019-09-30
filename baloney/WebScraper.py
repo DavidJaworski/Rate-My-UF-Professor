@@ -128,7 +128,7 @@ def search(userinput):
             new[prof] = course[prof]
         else:
             avoid[prof] = course[prof]
-    for bucket in [{'Guaranteed Winners': guarantee}, {'Promising Newcomer': promising}, {'Middle of the Barrel': mediocre}, {'Please Avoid': avoid}, {'New Guys: Brand new profs and TAs': new}]:
+    for bucket in [{'Guaranteed Winners': guarantee}, {'Promising Newcomer': promising}, {'Middle of the Barrel': mediocre}, {'Please Avoid': avoid}, {'New Guys': new}]:
         for title in bucket:
             if bucket[title]:
                 sortedProfs.append({title: bucket[title]})
